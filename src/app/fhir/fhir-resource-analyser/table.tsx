@@ -4,20 +4,34 @@ export function HTMLTable(data: any) {
 
     const resourceMap = () => {
         const resources = []
-        for (let resource in data.data.resources)
+        for (let resource in data.data.resources) {
+            const otherAttrs = []
+            const clone = (({ variableNameForStoringResourceId, type, mappings, ...o }) => o)(data.data.resources[resource])
+            if (Object.keys(clone).length !== 0) {
+                for (const [key, value] of Object.entries(clone)) {
+                    otherAttrs.push(
+                        <p className="text-xl font-medium">{key}: <code>{String(value)}</code></p>
+                    )
+                }
+            }
             resources.push(
                 <div>
-                    <h4 className="text-2xl font-medium">Resource: {data.data.resources[resource].variableNameForStoringResourceId}</h4>
-                    <p className="text-xl font-medium">Type: <FhirTypeDef type={data.data.resources[resource].type} /></p>
+                    <h4 className="text-2xl font-medium">resource: <code>{data.data.resources[resource].variableNameForStoringResourceId}</code></h4>
+                    <p className="text-xl font-medium">type: <code>{data.data.resources[resource].type}</code> &lt;<FhirTypeDef type={data.data.resources[resource].type} />&gt;</p>
+                    {
+                        otherAttrs
+                    }
                     <RenderHTMLTable mappings={data.data.resources[resource].mappings} />
+                   
                 </div>
             )
+        }
         return resources
     }
     return (
         <div>
             <p className="text-3xl">HTML Preview</p>
-            <p className="text-xl font-medium">version: {data.data.version}</p>
+            <p className="text-xl font-medium">version: <code>{data.data.version}</code></p>
             {
                 resourceMap()
             }
