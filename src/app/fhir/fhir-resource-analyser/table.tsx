@@ -1,7 +1,6 @@
 import { FhirTypeDef } from "../../links"
 
 export function HTMLTable(data: any) {
-
     const resourceMap = () => {
         const resources = []
         for (let resource in data.data.resources) {
@@ -22,7 +21,6 @@ export function HTMLTable(data: any) {
                         otherAttrs
                     }
                     <RenderHTMLTable mappings={data.data.resources[resource].mappings} />
-                   
                 </div>
             )
         }
