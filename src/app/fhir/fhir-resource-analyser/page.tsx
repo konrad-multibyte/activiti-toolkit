@@ -39,7 +39,7 @@ function Page() {
     }
     return (
         <>
-            <main className="flex flex-col items-center justify-between p-24">
+            <main className="flex flex-col items-center justify-between lg:p-24">
                 <h1 className="text-3xl font-medium">FHIR Resource Analyser</h1>
                 <form onSubmit={handleJsonDocument} className="flex flex-col">
                     <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">JSON </label>
