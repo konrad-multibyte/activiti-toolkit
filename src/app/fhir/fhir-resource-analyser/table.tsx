@@ -27,7 +27,7 @@ export function HTMLTable(data: any) {
         return resources
     }
     return (
-        <div>
+        <div className="lg:p-24">
             <p className="text-3xl">HTML Preview</p>
             <p className="text-xl font-medium">version: <code>{data.data.version}</code></p>
             {
