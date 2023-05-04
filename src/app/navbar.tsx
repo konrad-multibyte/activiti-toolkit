@@ -38,7 +38,7 @@ export function NavLink(
     return (
         <li>
             <a
-                className={`block py-2 pl-3 pr-4 rounded md:bg-transparent md:text-black md:p-0 dark:text-white md:dark:text-white ${className}`}
+                className={`block py-2 pl-4 pr-4 rounded md:bg-transparent md:text-black md:p-0 dark:text-white md:dark:text-white ${className}`}
                 href={href}
                 aria-current="page"
             >
