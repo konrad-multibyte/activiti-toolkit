@@ -2,7 +2,7 @@ import { ArrowRightIcon } from "../icons"
 
 export default function Page() {
     return (
-        <main className="flex flex-col items-center justify-between p-24">
+        <main className="flex flex-col flex-grow items-center justify-between p-24">
             <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-2 lg:text-left">
                 <CardExternal href="https://jsonpathfinder.com/" title="JSON Path Finder" text="Web app to find the path of an item in a JSON object. Developed by Joe Beach." />
                 <CardExternal
