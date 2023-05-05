@@ -25,7 +25,7 @@ function Page() {
     const presentError = () => {
         if (!parseSuccess && parseError !== "") {
             return (
-                <span className="text-red-400">{parseError}</span>
+                <span className="text-red-400 text-center">{parseError}</span>
             )
         }
     }
@@ -39,16 +39,18 @@ function Page() {
     }
     return (
         <>
-            <main className="flex flex-col items-center justify-between lg:p-24">
-                <h1 className="text-3xl font-medium">FHIR Resource Analyser</h1>
-                <form onSubmit={handleJsonDocument} className="flex flex-col">
-                    <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">JSON </label>
-                    <textarea id="jsonDocument" name="jsonDocument" rows={4} cols={100} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Paste JSON here..."></textarea>
-                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold my-1 py-2 px-4 rounded" type="submit">Analyse</button>
-                </form>
-                {
-                    presentError()
-                }
+            <main className="flex flex-col flex-grow items-center justify-between lg:p-24">
+                <div>
+                    <h1 className="text-3xl text-center font-medium">FHIR Resource Analyser</h1>
+                    <form onSubmit={handleJsonDocument} className="flex flex-col">
+                        <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">JSON</label>
+                        <textarea id="jsonDocument" name="jsonDocument" rows={4} cols={100} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Paste JSON here..."></textarea>
+                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold my-1 py-2 px-4 rounded" type="submit">Analyse</button>
+                    </form>
+                    {
+                        presentError()
+                    }
+                </div>
                 {
                     generateHtml()
                 }

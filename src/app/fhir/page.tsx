@@ -2,7 +2,7 @@ import { ArrowRightIcon } from "../icons"
 
 export default function Page() {
     return (
-        <main className="flex flex-col items-center justify-between p-24">
+        <main className="flex flex-col flex-grow items-center justify-between p-24">
             <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-1 lg:text-left">
                 <Card href="/fhir/fhir-resource-analyser" title="FHIR Resource Analyser" text="Tool for viewing FHIR Resources." />
                 
